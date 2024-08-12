@@ -1,6 +1,4 @@
-## Task Managment using Nest.js and Next.js
-
-# Task Management Application
+# Task Management Application using Nest.js and Next.js
 
 This task management application allows users to organize and track their tasks effectively. It includes features like user authentication, task categorization, and a LinkedIn profile scraping feature. The application is built with a modern tech stack, ensuring a robust and efficient experience.
 
@@ -49,13 +47,13 @@ To run this application locally, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/task-management-app.git
+    git clone https://github.com/SaadHussein/Task-Managment-Nest.js-and-Next.js.git
     ```
 
-2. **Navigate to the project directory:**
+2. **Navigate to the project directory backend:**
 
     ```bash
-    cd task-management-app
+    cd .\backend\
     ```
 
 3. **Install the dependencies:**
@@ -63,19 +61,32 @@ To run this application locally, follow these steps:
     ```bash
     npm install
     ```
+    
+ 4. **Navigate to the project directory frontend after intall dependencies for backend:**
 
-4. **Set up environment variables:**
+```bash
+ cd ..
+cd .\frontend\
+```
+
+5. **Install the dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+6. **Set up environment variables for backend:**
 
     Create a `.env` file in the root directory and add the following variables:
 
     ```env
-    DATABASE_URL=<your-mongodb-url>
-    JWT_SECRET=<your-jwt-secret>
-    LINKEDIN_USERNAME=<your-linkedin-username>
-    LINKEDIN_PASSWORD=<your-linkedin-password>
+    DATABASE_LINK=<your-mongodb-url>
+    JWT_SECRET_kEY=<your-jwt-secret>
+    LINKEDIN_EMAIL_TEST=<your-linkedin-username>
+    LINKEDIN_PASSWORD_TEST=<your-linkedin-password>
     ```
 
-5. **Run the application:**
+5. **Run the frontend application:**
 
     ```bash
     npm run dev
@@ -84,7 +95,7 @@ To run this application locally, follow these steps:
 6. **Run the Nest.js server:**
 
     ```bash
-    npm run start:server
+    npm run start:dev
     ```
 
 ## Usage
@@ -102,12 +113,13 @@ To run this application locally, follow these steps:
 
 | Endpoint          | Method | Description                       |
 | ----------------- | ------ | --------------------------------- |
-| `/api/auth/login` | POST   | Authenticate user and return JWT  |
-| `/api/auth/register` | POST | Register a new user               |
-| `/api/tasks`      | GET    | Get all tasks for the logged-in user |
-| `/api/tasks`      | POST   | Create a new task                 |
-| `/api/tasks/:id`  | PUT    | Update an existing task           |
-| `/api/tasks/:id`  | DELETE | Delete a task                     |
+| `/user/login` | POST   | Authenticate user and return JWT  |
+| `/user/register` | POST | Register a new user               |
+| `/task`      | GET    | Get all tasks for the logged-in user |
+| `/task`      | POST   | Create a new task                 |
+| `/task/:id`  | GET    | GET a task details           |
+| `/task/:id`  | PATCH    | Update an existing task           |
+| `/task/:id`  | DELETE | Delete a task                     |
 
 ## LinkedIn Profile Scraping
 
@@ -122,7 +134,3 @@ The application is designed to be fully responsive, providing an optimal user ex
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
