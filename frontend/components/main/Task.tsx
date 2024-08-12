@@ -112,7 +112,11 @@ const Task = ({
 					/>
 				</div>
 			</div>
-			<span className="max-[400px]:text-[14px] max-[565px]:mt-2">
+			<span
+				className={`max-[400px]:text-[14px] max-[565px]:mt-2 ${
+					new Date() >= new Date(deadline) ? "text-red-600" : ""
+				}`}
+			>
 				Deadline: {deadline}
 			</span>
 		</div>

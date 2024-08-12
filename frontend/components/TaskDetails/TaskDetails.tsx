@@ -91,7 +91,13 @@ const TaskDetails = ({ task }: { task: TaskSchema | null }) => {
 						onClick={handleUpdateCompletedTask}
 					/>
 				</p>
-				<p className="text-[21px] max-[600px]:text-[18px] my-3 font-medium">
+				<p
+					className={`text-[21px] max-[600px]:text-[18px] my-3 font-medium ${
+						new Date() >= new Date(task?.deadline ? task.deadline : "")
+							? "text-red-600"
+							: ""
+					}`}
+				>
 					Task Deadline: {task?.deadline}
 				</p>
 			</div>
